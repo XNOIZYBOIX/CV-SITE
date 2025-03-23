@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
 
 *{
@@ -28,7 +27,7 @@ html{
 
 
 section{
-    padding: 100px 0;
+    padding: 200px 0; /* Increased padding to add more space */
 }
 .max-width{
     max-width: 1300px;
@@ -44,8 +43,11 @@ section{
 .contact .contact-content{
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: stretch; /* Ensure equal height columns */
     justify-content: space-between;
+}
+.contact .contact-content .column{
+    width: calc(50% - 20px); /* Slightly reduce column gap */
 }
 section .title{
     position: relative;
@@ -160,7 +162,6 @@ section .title::after{
 .scroll-up-btn:hover{
     filter: brightness(90%);
 }
-
 
 
 .home{
@@ -303,7 +304,6 @@ section .title::after{
 }
 
 
-
 .skills .title::after{
     content: "what i know";
 }
@@ -362,22 +362,23 @@ section .title::after{
     background: crimson;
 }
 .skills-content .right .html::before{
-    width: 90%;
+    width: 90%; /* Python */
 }
 .skills-content .right .css::before{
-    width: 60%;
+    width: 80%; /* R Programming */
 }
 .skills-content .right .js::before{
-    width: 80%;
+    width: 75%; /* Power BI */
 }
 .skills-content .right .Python::before{
-    width: 80%;
+    width: 70%; /* MySQL */
 }
 .skills-content .right .mysql::before{
-    width: 70%;
+    width: 60%; /* Java */
 }
-
-
+.skills-content .right .R-lang::before{
+    width: 65%; /* SQL Server */
+}
 
 
 .teams .title::after{
@@ -450,12 +451,12 @@ section .title::after{
     width: calc(50% - 30px);
 }
 .contact .contact-content .text{
-    font-size: 20px;
+    font-size: 24px; /* Increased font size */
     font-weight: 600;
     margin-bottom: 10px;
 }
 .contact .contact-content .left p{
-    text-align: justify;
+    text-align: center; /* Center align text in left column */
 }
 .contact .contact-content .left .icons{
     margin: 10px 0;
@@ -473,6 +474,7 @@ section .title::after{
     color: crimson;
 }
 .contact .contact-content .info .head{
+    font-size: 20px; /* Increased font size */
     font-weight: 500;
 }
 .contact .contact-content .info .sub-title{
@@ -480,7 +482,10 @@ section .title::after{
 }
 .contact .right form .fields{
     display: flex;
+    flex-basis: 100%; /* Ensure form fields take full width */
+    align-items: flex-start; /* Align form fields to the start */
 }
+/* Removed extra closing brace */
 .contact .right form .field,
 .contact .right form .fields .field{
     height: 45px;
@@ -518,25 +523,27 @@ section .title::after{
   display: flex;
   align-items: center;
 }
-.right form .button-area button{
-  color: #fff;
-  display: block;
-  width: 160px!important;
-  height: 45px;
-  outline: none;
-  font-size: 18px;
-  font-weight: 500;
-  border-radius: 6px;
-  cursor: pointer;
-  flex-wrap: nowrap;
-  background: crimson;
-  border: 2px solid crimson;
-  transition: all 0.3s ease;
+.contact .right form .button-area button{
+    color: #fff;
+    display: block;
+    width: 160px!important;
+    height: 45px;
+    outline: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    flex-wrap: nowrap;
+    background: crimson;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
 }
-.right form .button-area button:hover{
-  color: crimson;
-  background: none;
+.contact .right form .button-area button:hover{
+    color: crimson;
+    background: #fff;
+    border: 2px solid crimson;
 }
+
 
 footer{
     background: #111;
@@ -551,7 +558,6 @@ footer span a{
 footer span a:hover{
     text-decoration: underline;
 }
-
 
 
 @media (max-width: 1104px) {
@@ -596,39 +602,6 @@ footer span a:hover{
         margin: 20px 0;
         font-size: 25px;
     }
-    .home .home-content .text-2{
-        font-size: 70px;
-    }
-    .home .home-content .text-3{
-        font-size: 35px;
-    }
-    .home .home-content a{
-        font-size: 23px;
-        padding: 10px 30px;
-    }
-    .max-width{
-        max-width: 930px;
-    }
-    .about .about-content .column{
-        width: 100%;
-    }
-    .about .about-content .left{
-        display: flex;
-        justify-content: center;
-        margin: 0 auto 60px;
-    }
-    .about .about-content .right{
-        flex: 100%;
-    }
-    .services .serv-content .card{
-        width: calc(50% - 10px);
-        margin-bottom: 20px;
-    }
-    .skills .skills-content .column,
-    .contact .contact-content .column{
-        width: 100%;
-        margin-bottom: 35px;
-    }
 }
 
 @media (max-width: 690px) {
@@ -643,6 +616,7 @@ footer span a:hover{
     }
     .home .home-content a{
         font-size: 20px;
+        padding: 10px 25px;
     }
     .services .serv-content .card{
         width: 100%;
@@ -656,9 +630,23 @@ footer span a:hover{
     .home .home-content .text-3{
         font-size: 27px;
     }
-    .about .about-content .right .text,
-    .skills .skills-content .left .text{
-        font-size: 19px;
+    .about .about-content .column{
+        width: 100%;
+    }
+    .about .about-content .left{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .about-content .right{
+        flex: 100%;
+    }
+    .skills .skills-content .column,
+    .contact .contact-content .column{
+        width: 100%;
+    }
+    .services .serv-content .card{
+        width: 100%;
     }
     .contact .right form .fields{
         flex-direction: column;
@@ -679,4 +667,3 @@ footer span a:hover{
         line-height: 38px;
     }
 }
-
